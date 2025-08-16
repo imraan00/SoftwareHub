@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Software Hub</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+    .page { display: none; }
+    .active-nav { border-b-4 border-yellow-400; font-weight: 700; }
+    .collapsible-content { display: none; }
+</style>
+</head>
+<body class="antialiased text-gray-800">
+
+<!-- Navigation -->
+<nav class="bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg py-4 px-6 flex justify-center space-x-6 sticky top-0 z-50">
+    <button class="nav-btn hover:text-gray-200" data-target="home-page">Home</button>
+    <button class="nav-btn hover:text-gray-200" data-target="microsoft-page">Microsoft Office</button>
+    <button class="nav-btn hover:text-gray-200" data-target="adobe-page">Adobe Apps</button>
+    <button class="nav-btn hover:text-gray-200" data-target="trend-page">Trend Antivirus</button>
+</nav>
+
+<!-- Home Page -->
+<section id="home-page" class="page min-h-screen flex flex-col justify-center items-center bg-white p-10">
+    <h1 class="text-5xl font-extrabold text-blue-700 mb-6 text-center">Welcome to Software Hub</h1>
+    <p class="text-xl text-gray-700 mb-10 max-w-3xl text-center">
+        Discover top software solutions for productivity, creativity, and security. Explore Microsoft Office, Adobe Creative Cloud, and Trend Micro Antivirus — all in one place.
+    </p>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
+        <div class="bg-blue-50 p-6 rounded-xl shadow-lg text-center">
+            <h2 class="text-2xl font-bold text-blue-700 mb-2">Contact Info</h2>
+            <p class="text-lg mb-1"><span class="font-semibold">Phone:</span> <a href="tel:+27847865336" class="text-blue-500 hover:underline">084 786 5336</a></p>
+            <p class="text-lg"><span class="font-semibold">Instagram:</span> <a href="https://www.instagram.com/imraan_mehtar" target="_blank" class="text-blue-500 hover:underline">imraan_mehtar</a></p>
+        </div>
+        <div class="bg-yellow-50 p-6 rounded-xl shadow-lg text-center">
+            <h2 class="text-2xl font-bold text-yellow-700 mb-2">About Us</h2>
+            <p class="text-lg">We provide guidance and information on the best software for personal, educational, and professional use. Learn about top productivity and creative tools along with robust antivirus solutions.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Microsoft Office Page -->
+<section id="microsoft-page" class="page min-h-screen container mx-auto px-4 py-10">
+    <h2 class="text-4xl font-extrabold text-blue-700 text-center mb-8">Microsoft Office 2021 Professional</h2>
+    <div id="ms-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- App cards dynamically handled by JS -->
+    </div>
+    <div id="ms-detail-container" class="app-detail-page bg-white p-8 rounded-xl shadow-lg mt-10" style="display:none;">
+        <button id="ms-back-btn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full mb-6">Back</button>
+        <div id="ms-detail-content" class="flex flex-col items-center text-center"></div>
+    </div>
+</section>
+
+<!-- Adobe Page -->
+<section id="adobe-page" class="page min-h-screen bg-gray-50 px-4 py-10">
+    <h2 class="text-4xl font-extrabold text-purple-700 text-center mb-8">Adobe Creative Cloud Applications</h2>
+    <div id="adobe-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- App cards dynamically handled by JS -->
+    </div>
+    <div id="adobe-detail-container" class="app-detail-page bg-white p-8 rounded-xl shadow-lg mt-10" style="display:none;">
+        <button id="adobe-back-btn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-full mb-6">Back</button>
+        <div id="adobe-detail-content" class="flex flex-col items-center text-center"></div>
+    </div>
+</section>
+
+<!-- Trend Antivirus Page -->
+<section id="trend-page" class="page min-h-screen bg-gray-900 text-white p-10">
+    <h2 class="text-4xl font-extrabold text-yellow-400 text-center mb-8">Trend Micro Antivirus</h2>
+    <div class="flex justify-center mb-6">
+        <img src="Trend.jpg" alt="Trend Micro Logo" class="w-50 h-48">
+    </div>
+    <div class="max-w-4xl mx-auto space-y-4 text-blue-400">
+        <button class="trend-toggle w-full text-left bg-gray-800 hover:bg-gray-700 py-3 px-4 rounded">What is Trend Micro Antivirus?</button>
+        <div class="collapsible-content bg-gray-800 p-4 rounded text-gray-200">
+            <p>Trend Micro Antivirus is a computer security program that protects your devices from viruses, hackers, and other online threats.</p>
+        </div>
+
+        <button class="trend-toggle w-full text-left bg-gray-800 hover:bg-gray-700 py-3 px-4 rounded">Why do you need it?</button>
+        <div class="collapsible-content bg-gray-800 p-4 rounded text-gray-200">
+            <p>Without antivirus protection, your computer is vulnerable to viruses, spyware, ransomware, and phishing websites.</p>
+        </div>
+
+        <button class="trend-toggle w-full text-left bg-gray-800 hover:bg-gray-700 py-3 px-4 rounded">What Trend Micro does for you</button>
+        <div class="collapsible-content bg-gray-800 p-4 rounded text-gray-200">
+            <ul class="list-disc list-inside">
+                <li>Real-Time Protection</li>
+                <li>Web Protection</li>
+                <li>Email Protection</li>
+                <li>Ransomware Protection</li>
+                <li>System Optimization</li>
+            </ul>
+        </div>
+
+        <button class="trend-toggle w-full text-left bg-gray-800 hover:bg-gray-700 py-3 px-4 rounded">Benefits for you</button>
+        <div class="collapsible-content bg-gray-800 p-4 rounded text-gray-200">
+            <ul class="list-disc list-inside">
+                <li>Peace of mind</li>
+                <li>Protection for family</li>
+                <li>Better performance</li>
+                <li>Always updated</li>
+            </ul>
+        </div>
+
+        <button class="trend-toggle w-full text-left bg-gray-800 hover:bg-gray-700 py-3 px-4 rounded">How it works daily</button>
+        <div class="collapsible-content bg-gray-800 p-4 rounded text-gray-200">
+            <ul class="list-disc list-inside">
+                <li>Runs quietly in the background</li>
+                <li>Alerts only when there’s a problem</li>
+                <li>Updates automatically</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-8 px-4 mt-12 rounded-t-lg">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        <div class="mb-6 md:mb-0">
+            <h4 class="text-2xl font-bold mb-2">Contact Me</h4>
+            <p class="text-gray-400">Reach out for more information or to purchase your license!</p>
+        </div>
+        <div class="space-y-3">
+            <p class="text-lg">
+                <span class="font-semibold">Phone:</span> <a href="tel:+27847865336" class="text-blue-400 hover:underline">084 786 5336</a>
+            </p>
+            <p class="text-lg">
+                <span class="font-semibold">Instagram:</span> <a href="https://www.instagram.com/imraan_mehtar" target="_blank" class="text-blue-400 hover:underline">imraan_mehtar</a>
+            </p>
+        </div>
+    </div>
+    <div class="text-center text-gray-500 text-sm mt-8 pt-6 border-t border-gray-700">
+        &copy; 2025 Software Hub. All rights reserved.
+    </div>
+</footer>
+
+<script>
+    // Navigation & Active Highlight
+    const pages = document.querySelectorAll('.page');
+    const navBtns = document.querySelectorAll('.nav-btn');
+    function showPage(pageId) {
+        pages.forEach(p => p.style.display = 'none');
+        document.getElementById(pageId).style.display = 'block';
+        navBtns.forEach(b => b.classList.remove('active-nav'));
+        document.querySelector(`.nav-btn[data-target="${pageId}"]`).classList.add('active-nav');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    navBtns.forEach(btn => btn.addEventListener('click', () => showPage(btn.dataset.target)));
+    showPage('home-page');
+
+    // Microsoft Office Apps Data
+    const msAppsData = {
+        word: { name: "Microsoft Word", logo: "Word.png", color: "blue", description: "Microsoft Word is a program used for typing and creating documents.", features:["Write letters, resumes, reports, and essays","Add pictures, tables, and designs","Correct spelling and grammar automatically","Save or print documents"] },
+        excel: { name: "Microsoft Excel", logo: "Excel.jpg", color: "green", description: "Excel is a spreadsheet program used to organize numbers and data.", features:["Create budgets, invoices, and reports","Perform automatic calculations","Use charts to visualize data","Track sales, expenses, or attendance"] },
+        powerpoint: { name: "Microsoft PowerPoint", logo: "Powerpoint.png", color: "red", description: "PowerPoint helps you make slideshow presentations.", features:["Create professional slideshows","Add transitions and effects","Present for school or work","Use pre-made templates"] },
+        access: { name: "Microsoft Access", logo: "Access.jpg", color: "purple", description: "Access is used to build and manage databases.", features:["Store and organize data","Search and filter information","Create forms and reports","Track lots of data"] },
+        outlook: { name: "Microsoft Outlook", logo: "Outlook.png", color: "blue-400", description: "Outlook is an email and calendar app.", features:["Send and receive emails","Schedule appointments and meetings","Set reminders and tasks","Manage contacts"] }
+    };
+
+    const msGrid = document.getElementById('ms-grid');
+    const msDetailContainer = document.getElementById('ms-detail-container');
+    const msDetailContent = document.getElementById('ms-detail-content');
+    const msBackBtn = document.getElementById('ms-back-btn');
+
+    Object.keys(msAppsData).forEach(key => {
+        const app = msAppsData[key];
+        const card = document.createElement('div');
+        card.className = "app-card bg-white p-6 rounded-xl shadow-lg flex flex-col items-center text-center cursor-pointer hover:scale-105 transform transition-transform duration-300";
+        card.innerHTML = `<img src="${app.logo}" alt="${app.name}" class="w-40 h-40 mb-4 rounded-full border-4 border-${app.color}-500 p-2 bg-${app.color}-50"><h3 class="text-2xl font-bold text-${app.color}-600">${app.name}</h3>`;
+        card.addEventListener('click', () => {
+            msGrid.style.display = 'none';
+            msDetailContainer.style.display = 'block';
+            msDetailContent.innerHTML = `<img src="${app.logo}" alt="${app.name} Logo" class="w-48 h-48 mb-6 rounded-full border-4 border-${app.color}-500 p-3 bg-${app.color}-50">
+                <h2 class="text-4xl font-extrabold text-${app.color}-700 mb-4">${app.name}</h2>
+                <p class="text-lg leading-relaxed text-gray-700 mb-8 max-w-3xl text-center">${app.description}</p>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">What you can do with ${app.name}:</h3>
+                <ul class="list-disc list-inside text-left text-gray-700 space-y-2 text-lg max-w-2xl">${app.features.map(f => `<li>${f}</li>`).join('')}</ul>`;
+        });
+        msGrid.appendChild(card);
+    });
+
+    msBackBtn.addEventListener('click', () => { msDetailContainer.style.display = 'none'; msGrid.style.display = 'grid'; });
+
+    // Adobe Apps Data
+    const adobeAppsData = {
+        photoshop: { name:"Adobe Photoshop", logo:"Photoshop.png", color:"blue", description:"Turn any photo into a masterpiece — no magic wand required.", features:["Fix, transform, and enhance images","Retouch portraits","Remove backgrounds","Design digital art","Supports text, effects, brushes, and filters"] },
+        illustrator: { name:"Adobe Illustrator", logo:"Ai.jpg", color:"orange", description:"Design once, scale forever — your art stays crystal clear at any size.", features:["Design logos, icons, infographics","Precise drawing tools","Clean professional artwork","Ideal for branding, print, and web"] },
+        aftereffects: { name:"Adobe After Effects", logo:"AfterEffects.jpg", color:"purple", description:"If you can imagine it moving, After Effects can make it happen.", features:["Create cinematic animations","Dynamic text and transitions","Visual effects for social media, ads, or films"] },
+        premiere: { name:"Adobe Premiere Pro", logo:"Premiere Pro.png", color:"red", description:"From raw clips to wow moments — Premiere Pro brings your story to life.", features:["Cut, arrange, and refine footage","Adjust colors and audio","Add transitions and effects","Export in any format"] },
+        indesign: { name:"Adobe InDesign", logo:"indesign.jpg", color:"pink", description:"Your words deserve a beautiful home — InDesign builds it.", features:["Design magazines, brochures, books","Powerful typography tools","Export print-ready or digital formats"] }
+    };
+
+    const adobeGrid = document.getElementById('adobe-grid');
+    const adobeDetailContainer = document.getElementById('adobe-detail-container');
+    const adobeDetailContent = document.getElementById('adobe-detail-content');
+    const adobeBackBtn = document.getElementById('adobe-back-btn');
+
+    Object.keys(adobeAppsData).forEach(key => {
+        const app = adobeAppsData[key];
+        const card = document.createElement('div');
+        card.className = "app-card bg-white p-6 rounded-xl shadow-lg flex flex-col items-center text-center cursor-pointer hover:scale-105 transform transition-transform duration-300";
+        card.innerHTML = `<img src="${app.logo}" alt="${app.name}" class="w-40 h-40 mb-4 rounded-full border-4 border-${app.color}-500 p-2 bg-${app.color}-50"><h3 class="text-2xl font-bold text-${app.color}-600">${app.name}</h3>`;
+        card.addEventListener('click', () => {
+            adobeGrid.style.display = 'none';
+            adobeDetailContainer.style.display = 'block';
+            adobeDetailContent.innerHTML = `<img src="${app.logo}" alt="${app.name} Logo" class="w-48 h-48 mb-6 rounded-full border-4 border-${app.color}-500 p-3 bg-${app.color}-50">
+                <h2 class="text-4xl font-extrabold text-${app.color}-700 mb-4">${app.name}</h2>
+                <p class="text-lg leading-relaxed text-gray-700 mb-8 max-w-3xl text-center">${app.description}</p>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">What you can do with ${app.name}:</h3>
+                <ul class="list-disc list-inside text-left text-gray-700 space-y-2 text-lg max-w-2xl">${app.features.map(f => `<li>${f}</li>`).join('')}</ul>`;
+        });
+        adobeGrid.appendChild(card);
+    });
+
+    adobeBackBtn.addEventListener('click', () => { adobeDetailContainer.style.display = 'none'; adobeGrid.style.display = 'grid'; });
+
+    // Trend Collapsible Sections
+    const trendBtns = document.querySelectorAll('.trend-toggle');
+    trendBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const content = btn.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+
+</script>
+</body>
+</html>
